@@ -24,7 +24,17 @@ Requirements: JDK 17+ and the Android SDK (API 35). Android Studio has both.
 ```
 
 Every push also builds the APK on GitHub Actions; download it from the run's
-**todo-debug-apk** artifact and install it on your devices.
+**todo-debug-apk** artifact and install it on your devices. CI also runs the app on a
+phone and a tablet emulator (`app/src/androidTest/`) and keeps the screenshots as the
+**device-tests-phone** / **device-tests-tablet** artifacts.
+
+## Releases
+
+**Actions → Release → Run workflow**, enter a version such as `1.1.0`. The workflow runs
+the tests, builds the APK and publishes a GitHub release `v1.1.0` with `ToDo-1.1.0.apk`
+attached and notes generated from the merged changes. Pushing a tag like `v1.1.0` does
+the same. Versions must be `major.minor.patch` and higher than the last one, because
+Android only installs updates with a higher version code (1.2.3 → 10203).
 
 ## Turning on Google Drive sync (one-time setup)
 
