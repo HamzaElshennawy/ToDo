@@ -280,7 +280,7 @@ private fun DataSection(vm: MainViewModel) {
 @Composable
 private fun Footer() {
     Text(
-        "ToDo 1.0.0 · Synced tasks are kept in a private app folder in your own Google Drive.",
+        "ToDo ${com.hamza.todo.BuildConfig.VERSION_NAME} · Synced tasks are kept in a private app folder in your own Google Drive.",
         style = MaterialTheme.typography.bodySmall,
         color = Todo.colors.muted,
         modifier = Modifier.padding(start = 8.dp, top = 12.dp),
