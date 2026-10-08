@@ -30,6 +30,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -72,9 +73,11 @@ fun ListDetailScreen(
     val listById = remember(lists) { lists.associateBy { it.id } }
     val list = listById[listId]
     val special = listId == ALL_TASKS || listId == COMPLETED_TASKS
+    // A list that was just created may not have loaded yet; only leave if it existed and then went away.
+    var seen by remember(listId) { mutableStateOf(false) }
+    if (list != null && !seen) SideEffect { seen = true }
     if (!special && list == null) {
-        // The list was deleted (here or on another device).
-        LaunchedEffect(Unit) { onBack?.invoke() }
+        if (seen) LaunchedEffect(Unit) { onBack?.invoke() } // deleted here or on another device
         return
     }
 

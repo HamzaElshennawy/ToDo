@@ -129,7 +129,8 @@ fun TodoApp(vm: MainViewModel) {
                 if (!tablet && onTab) {
                     ExtendedFloatingActionButton(
                         onClick = { addRequest = AddTaskRequest() },
-                        icon = { Icon(Icons.Filled.Add, null) },
+                        // The extended FAB hides its text from accessibility; the icon carries the label.
+                        icon = { Icon(Icons.Filled.Add, "New task") },
                         text = { Text("New task") },
                     )
                 }
