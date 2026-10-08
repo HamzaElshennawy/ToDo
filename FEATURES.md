@@ -56,6 +56,8 @@ Single-user app: no sign-up, no login, no sharing or collaboration.
   - Turned on once in Settings; works offline and syncs when back online
   - Conflict handling: last edit wins per task, deleted tasks stay deleted
   - "Last synced" status and a "Sync now" button in Settings
+  - Option to sync on Wi-Fi only
+  - List of my synced devices with when each last synced
 - Backup and restore; export to JSON/CSV
 
 ## Phase 4 — Extras
