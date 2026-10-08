@@ -69,7 +69,8 @@ Features are grouped by release phase so the app can ship early and grow.
 
 ## Non-functional requirements
 
-- Runs on both iOS and Android
+- Android only, phones and tablets
+- Tablet layout: navigation rail on the side and two panes (task list + task details, lists + list contents), in portrait and landscape
 - Fast startup (< 2 s) and smooth 60 fps scrolling with 1,000+ tasks
 - No data loss on crash or when offline
 - Privacy: no task data leaves the device unless sync is enabled
