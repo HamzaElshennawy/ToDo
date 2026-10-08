@@ -47,12 +47,16 @@ Features are grouped by release phase so the app can ship early and grow.
 - **Natural-language input**: "Call mom tomorrow at 5pm !high" sets the date and priority
 - Haptic feedback and completion animations
 
-## Phase 3 — Accounts & sync
+## Phase 3 — Sync across my devices
 
-- Sign up / log in (email, Google, Apple)
-- Cloud sync across devices, with conflict handling
+Single-user app: no sign-up, no login, no sharing or collaboration.
+
+- Sync tasks and lists across my Android phones and tablets
+  - Uses the Google account already on each device (Drive app-data folder), so there is no in-app account or login screen
+  - Turned on once in Settings; works offline and syncs when back online
+  - Conflict handling: last edit wins per task, deleted tasks stay deleted
+  - "Last synced" status and a "Sync now" button in Settings
 - Backup and restore; export to JSON/CSV
-- Shared lists: invite others, assign tasks, see who completed what
 
 ## Phase 4 — Extras
 
@@ -73,4 +77,4 @@ Features are grouped by release phase so the app can ship early and grow.
 - Tablet layout: navigation rail on the side and two panes (task list + task details, lists + list contents), in portrait and landscape
 - Fast startup (< 2 s) and smooth 60 fps scrolling with 1,000+ tasks
 - No data loss on crash or when offline
-- Privacy: no task data leaves the device unless sync is enabled
+- Privacy: no task data leaves the device unless sync is enabled, and then only to my own Google Drive
